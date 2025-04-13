@@ -1,6 +1,5 @@
 package upeu.edu.pe.msppp.controller;
 
-<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -53,7 +52,5 @@ public class PppController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
-=======
-public class PppController {
-}
->>>>>>> 0f47dfd13f5478dabb2ff879428148ce9b163243
+
+

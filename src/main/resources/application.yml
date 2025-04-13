@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 server:
   port: 8088
 
@@ -12,6 +12,4 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-=======
-spring.application.name=ms-ppp
->>>>>>> 0f47dfd13f5478dabb2ff879428148ce9b163243
+

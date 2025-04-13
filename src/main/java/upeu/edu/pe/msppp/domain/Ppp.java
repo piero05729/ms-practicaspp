@@ -1,6 +1,6 @@
 package upeu.edu.pe.msppp.domain;
 
-<<<<<<< HEAD
+
 import jakarta.persistence.*;
 import lombok.*;
 

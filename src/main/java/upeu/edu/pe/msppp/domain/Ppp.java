@@ -1,5 +1,6 @@
 package upeu.edu.pe.msppp.domain;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,4 +41,7 @@ public class Ppp {
 
     @Column(name = "estado")
     private String estado;
+=======
+public class ppp {
+>>>>>>> 0f47dfd13f5478dabb2ff879428148ce9b163243
 }

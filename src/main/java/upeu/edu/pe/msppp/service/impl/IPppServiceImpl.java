@@ -1,5 +1,6 @@
 package upeu.edu.pe.msppp.service.impl;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import upeu.edu.pe.msppp.domain.Ppp;
@@ -39,4 +40,7 @@ public class IPppServiceImpl implements IPppService {
     public List<Ppp> readAll() {
         return pppRepository.findAll();
     }
+=======
+public class IPppServiceImpl {
+>>>>>>> 0f47dfd13f5478dabb2ff879428148ce9b163243
 }

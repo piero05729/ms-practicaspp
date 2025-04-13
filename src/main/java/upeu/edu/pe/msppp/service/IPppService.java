@@ -1,5 +1,6 @@
 package upeu.edu.pe.msppp.service;
 
+<<<<<<< HEAD
 import upeu.edu.pe.msppp.domain.Ppp;
 
 import java.util.List;
@@ -11,4 +12,7 @@ public interface IPppService {
     void delete(Long id);
     Optional<Ppp> read(Long id);
     List<Ppp> readAll();
+=======
+public interface IPppService {
+>>>>>>> 0f47dfd13f5478dabb2ff879428148ce9b163243
 }

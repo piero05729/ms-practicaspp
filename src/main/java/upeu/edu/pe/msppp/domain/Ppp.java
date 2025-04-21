@@ -1,10 +1,13 @@
 package upeu.edu.pe.msppp.domain;
 
-
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "ppp")
@@ -27,11 +30,15 @@ public class Ppp {
     @Column(name = "nombre_estudi")
     private String nombreEstudi;
 
-    @Column(name = "empresa")
-    private String empresa;
 
-    @Column(name = "tutor")
-    private String tutor;
+    @ManyToOne
+    @JoinColumn(name = "tutor_id")
+    private Tutor tutor;
+
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    private Empresa empresa;
+
 
     @Column(name = "fecha_in")
     private LocalDate fechaIn;

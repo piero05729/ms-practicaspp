@@ -24,20 +24,17 @@ public class Ppp {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "id_estudi")
-    private Integer idEstudi;
-
     @Column(name = "nombre_estudi")
     private String nombreEstudi;
 
+    @Column(name = "id_estudi")
+    private Integer idEstudi;
 
     @ManyToOne
     @JoinColumn(name = "tutor_id")
     private Tutor tutor;
 
-    @ManyToOne
-    @JoinColumn(name = "empresa_id")
-    private Empresa empresa;
+
 
 
     @Column(name = "fecha_in")

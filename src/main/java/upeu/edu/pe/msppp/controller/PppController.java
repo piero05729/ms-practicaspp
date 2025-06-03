@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import upeu.edu.pe.msppp.domain.Ppp;
-import upeu.edu.pe.msppp.service.IPppService;
+
 import upeu.edu.pe.msppp.service.impl.IPppServiceImpl;
 
 import java.util.List;

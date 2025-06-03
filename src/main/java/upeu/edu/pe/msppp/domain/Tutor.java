@@ -1,21 +1,23 @@
 package upeu.edu.pe.msppp.domain;
-
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "tutor")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Tutor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idtutor")
     private Long idtutor;
 
-    @Column(name = "nombre", nullable = false)
+    @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "correo")
@@ -23,4 +25,7 @@ public class Tutor {
 
     @Column(name = "telefono")
     private String telefono;
+
+    @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL)
+    private Set<Ppp> ppps;
 }

@@ -1,24 +1,21 @@
 package upeu.edu.pe.msppp.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "ppp")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Ppp {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idppp")
     private Long idppp;
 
     @Column(name = "id")
@@ -33,9 +30,6 @@ public class Ppp {
     @ManyToOne
     @JoinColumn(name = "tutor_id")
     private Tutor tutor;
-
-
-
 
     @Column(name = "fecha_in")
     private LocalDate fechaIn;

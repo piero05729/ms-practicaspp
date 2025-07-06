@@ -32,18 +32,9 @@ public class IPppServiceImpl implements IPppService {
         }
 
         Ppp saved = pppRepository.save(p);
-
-
-        PppCreatedEvent event = new PppCreatedEvent(
-                saved.getIdppp(),
-                saved.getIdEstudi(),
-                saved.getTutor().getIdtutor(),
-                saved.getEstado()
-        );
-        eventPublisher.publishEvent(event);
-
         return saved;
     }
+
 
     @Override
     public Ppp update(Ppp p) {

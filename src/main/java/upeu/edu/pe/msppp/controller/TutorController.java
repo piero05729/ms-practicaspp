@@ -7,21 +7,34 @@ import upeu.edu.pe.msppp.domain.Tutor;
 import upeu.edu.pe.msppp.service.ITutorService;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/tutores")
+@RequestMapping("/api/tutor")
+@CrossOrigin(origins = "http://localhost:5173/")
 public class TutorController {
 
     @Autowired
     private ITutorService tutorService;
 
-    @GetMapping
-    public ResponseEntity<List<Tutor>> listar() {
-        List<Tutor> lista = tutorService.readAll();
-        if (lista.isEmpty()) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        return new ResponseEntity<>(lista, HttpStatus.OK);
+    @GetMapping("/combo")
+    public ResponseEntity<List<Map<String, String>>> listarParaCombo() {
+        List<Map<String, String>> tutores = tutorService.readAll().stream()
+                .map(t -> Map.of(
+                        "value", t.getNombre(), // o t.getId().toString() si prefieres
+                        "label", t.getNombre()
+                ))
+                .toList();
+
+        return new ResponseEntity<>(tutores, HttpStatus.OK);
     }
+    @GetMapping
+    public ResponseEntity<List<Tutor>> listarTutores() {
+        return new ResponseEntity<>(tutorService.readAll(), HttpStatus.OK);
+    }
+
+
 
     @PostMapping
     public ResponseEntity<Tutor> guardar(@RequestBody Tutor tutor) {

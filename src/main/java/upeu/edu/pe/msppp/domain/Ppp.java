@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+// import java.util.List; // ❌ Ya no se necesita
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,25 +19,23 @@ public class Ppp {
     @Column(name = "idppp")
     private Long idppp;
 
-    @Column(name = "id")
-    private Integer id;
-
-    @Column(name = "nombre_estudi")
+    @Column(name = "nombre_estudi", nullable = false)
     private String nombreEstudi;
 
-    @Column(name = "id_estudi")
+    @Column(name = "id_estudi", nullable = false)
     private Integer idEstudi;
 
-    @ManyToOne
-    @JoinColumn(name = "tutor_id")
-    private Tutor tutor;
 
-    @Column(name = "fecha_in")
+    // ✅ Reemplazo: solo se guarda el nombre del tutor
+    @Column(name = "nombre_tutor", nullable = false)
+    private String nombreTutor;
+
+    @Column(name = "fecha_in", nullable = false)
     private LocalDate fechaIn;
 
-    @Column(name = "fecha_fin")
+    @Column(name = "fecha_fin", nullable = false)
     private LocalDate fechaFin;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = false)
     private String estado;
 }

@@ -1,4 +1,5 @@
 package upeu.edu.pe.msppp.domain;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ public class Tutor {
     @Column(name = "idtutor")
     private Long idtutor;
 
-    @Column(name = "nombre")
+        @Column(name = "nombre")
     private String nombre;
 
     @Column(name = "correo")
@@ -26,6 +27,5 @@ public class Tutor {
     @Column(name = "telefono")
     private String telefono;
 
-    @OneToMany(mappedBy = "tutor", cascade = CascadeType.ALL)
-    private Set<Ppp> ppps;
+   
 }

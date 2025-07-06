@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/ppp")
+@CrossOrigin(origins = "http://localhost:5173/")
 public class PppController {
 
     @Autowired
@@ -20,6 +21,7 @@ public class PppController {
 
     @GetMapping
     public ResponseEntity<List<Ppp>> listar() {
+        System.out.println("Desde el get PPP");
         List<Ppp> lista = pppService.readAll();
         if (lista.isEmpty()) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         return new ResponseEntity<>(lista, HttpStatus.OK);
